@@ -9,21 +9,20 @@ import java.util.Date;
 public class MatriculaEntidad implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name = "idMatricula")
     private int idMatricula;
     @ManyToOne
     @JoinColumn(name="idAlumnado")
     private AlumnadoEntidad Alumnado;
     @ManyToOne
     @JoinColumn(name="idProfesorado")
-    private AlumnadoEntidad Profesorado;
+    private ProfesorEntidad Profesorado;
     @Column (name = "Asignatura")
     private String  Asignatura;
     @Column (name = "Curso")
     private int Curso;
 
-    public MatriculaEntidad(int idMatricula, AlumnadoEntidad alumnado, AlumnadoEntidad profesorado, String asignatura, int curso) {
-        this.idMatricula = idMatricula;
+
+    public MatriculaEntidad( AlumnadoEntidad alumnado, ProfesorEntidad profesorado, String asignatura, int curso) {
         Alumnado = alumnado;
         Profesorado = profesorado;
         Asignatura = asignatura;
@@ -50,11 +49,11 @@ public class MatriculaEntidad implements Serializable {
         Alumnado = alumnado;
     }
 
-    public AlumnadoEntidad getProfesorado() {
+    public ProfesorEntidad getProfesorado() {
         return Profesorado;
     }
 
-    public void setProfesorado(AlumnadoEntidad profesorado) {
+    public void setProfesorado(ProfesorEntidad profesorado) {
         Profesorado = profesorado;
     }
 

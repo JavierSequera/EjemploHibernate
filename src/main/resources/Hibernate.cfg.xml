@@ -17,7 +17,6 @@
         <!-- Establece el contexto de la sesion-->
         <property name="current_session_context_class">thread</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
-        <mapping class = "PersonasEntidad"/>
         <mapping class = "Ejercicio3_1.AlumnadoEntidad"/>
         <mapping class = "Ejercicio3_1.ProfesorEntidad"/>
         <mapping class = "Ejercicio3_1.MatriculaEntidad"/>
